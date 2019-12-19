@@ -69,7 +69,7 @@ The document has moved
       "streamSettings": {
         ...
         "sockopt": {
-          "mark": 255  //这里是 SO_MARK，用于 iptables 识别，每个 outbound 都要配置；255可以改成其他数值，但要与下面的 iptables 规则对应；如果有多个 outbound，最好奖所有 outbound 的 SO_MARK 都设置成一样的数值
+          "mark": 255  //这里是 SO_MARK，用于 iptables 识别，每个 outbound 都要配置；255可以改成其他数值，但要与下面的 iptables 规则对应；如果有多个 outbound，最好将所有 outbound 的 SO_MARK 都设置成一样的数值
         }
       }
     }
@@ -126,4 +126,5 @@ iptables -t mangle -A PREROUTING -p udp -j V2RAY_MASK
 * 2018-04-05 Update
 * 2018-08-30 设置步骤修正
 * 2018-09-14 比较优雅地代理本机流量
+* 2019-12-19 修正笔误
 
